@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
+    <link rel="icon" href="/images/weather.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/public/js"></script>
 </head>
+
 <body>
-    {{>header}}
-    <h1> {{title}}s</h1>
-    <p> created by {{name}}</p>
+    <div class="main-content">
+        {{>header}}
+
+        <p>Use this site to get your weather!</p>
+    </div>
+
     {{>footer}}
 </body>
+
 </html>
