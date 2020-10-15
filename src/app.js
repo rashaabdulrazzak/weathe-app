@@ -41,7 +41,21 @@ app.get('/weather', (req, res) => {
         location: 'Philadelphia'
     })
 })
-
+// get('*' call any link nt calling before )
+app.get('/help/*',(req,res)=>{
+    res.render('notfound',{
+        title:'weather app',
+        name:'rasha',
+        errorMsg: 'help article not found'
+    })
+})
+app.get('*',(req,res)=>{
+    res.render('notfound',{
+        title:'weather app',
+        name:'rasha',
+        errorMsg: 'Page not found'
+    })
+})
 app.listen(3000, () => {
     console.log('Server is up on port 3000.')
     console.log(publicDirectoryPath)
