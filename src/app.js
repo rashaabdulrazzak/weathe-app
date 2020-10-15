@@ -3,9 +3,27 @@ const express = require('express')
 
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
-
+// to be able to use handle bar 
+app.set('view engine', 'hbs');
 app.use(express.static(publicDirectoryPath))
 
+app.get('',(req,res)=>{
+    res.render('index',{
+        title:'weather app',
+        name:'rasha'
+    })
+})
+app.get('/about',(req,res)=>{
+    res.render('about',{
+        title:'Abou me',
+        name:"Mark "
+    })
+})
+app.get('/help',(req,res)=>{
+    res.render('help',{
+        message:'that is ahelp'
+    })
+})
 app.get('/weather', (req, res) => {
     res.send({
         forecast: 'It is snowing',
