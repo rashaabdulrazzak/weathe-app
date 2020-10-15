@@ -1,18 +1,23 @@
 const express = require('express')
 
 const app = express()
-
+// send html
 app.get('',(req,res)=>{
-     res.send('hello express')
+     res.send('<h1>hello express</h1>')
 })
+// send json
 app.get('/weather',(req,res)=>{
-   res.send('Weather page ')
+   res.send({
+       location : 'Boston',
+       teprature:'25'
+   })
 })
+// send array 
 app.get('/help',(req,res)=>{
-    res.send('hello help')
+    res.send([{name : 'rasha'},{name : 'rasha'}])
 })
 app.get('/about',(req,res)=>{
-    res.send('about page ')
+    res.send('<h1>about page </h1>')
  })
 // start the server 
 app.listen(3000,()=>{
